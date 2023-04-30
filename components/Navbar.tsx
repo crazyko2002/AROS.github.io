@@ -76,25 +76,23 @@ const Navbar = () => {
                 </div>
                 {/* ================== SearchBox End here ==============*/}
                 {/* ================== Accounts Start here ==============*/}
-                (userInfo ?(
+                {userInfo ? (
                     <div onClick={()=>signOut()} className="navBarHover">
-                    
+
                     <div>
                         <p className="text-xs">Sign Out</p>
-                        <h2 className="text-base font-semiboldv -mt-1">
-                            {userInfo.name}
-                        </h2>
+
                     </div>
                 </div>
-                )
-                )
-                <div onClick={()=>signIn()} className="navBarHover">
+                ) : (
+                    <div onClick={()=>signIn()} className="navBarHover">
                     <AiOutlineUser className="text-lg" />
                     <div>
                         <p className="text-xs">Hello, Sign In</p>
                         <h2 className="text-base font-semiboldv -mt-1">Account</h2>
                     </div>
                 </div>
+                )}
                 {/* ================== Accounts End here ==============*/}
                 {/* ================== MyItems Start here =============*/}
                 <div className="navBarHover">
